@@ -1,0 +1,20 @@
+package com.redhat.brms
+
+import com.redhat.brms.model.Order;
+
+// Function calling a setter
+function setOrderAmount(Order order, double amt) {
+	order.setAmount(amt);
+}
+
+// Rule belonging to the 1st RuleTask and invoking the DRL function to set a value
+rule "Rule 1 - Set Order Amount Rule"
+ruleflow-group "ComputeOrderAmount"
+no-loop
+when
+	$o: Order(id != null, amount == null)
+then
+	setOrderAmount($o, 101.);
+	update($o);
+end
+

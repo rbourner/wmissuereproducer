@@ -1,0 +1,13 @@
+package com.redhat.brms
+
+import com.redhat.brms.model.Order;
+
+
+// Rule belonging to the 2nd RuleTask and using the result of the 1st rule firing
+rule "Rule 2 - Set Discount Rule"
+ruleflow-group "ComputeOrderDiscount"
+when
+	$o: Order(id != null, amount > 100, amount < 200)
+then
+	$o.setDiscount(5.5);
+end

@@ -1,0 +1,14 @@
+/bin/
+/build/
+pom.xml.releaseBackup
+release.properties
+**.settings/
+/.vscode/
+/.sts4-cache/
+**/target/**
+/logs/
+**.factorypath
+.project
+.classpath
+.DS_Store
+/target/

@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>WMIssueReproducer</artifactId>
+
+	<parent>
+		<groupId>com.redhat.brms</groupId>
+		<artifactId>common-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<kie.version>7.3.1.GA-redhat-00002</kie.version>
+		
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
+	<scm>
+    	<developerConnection>scm:git:git@github.com:rbourner/wmissuereproducer.git</developerConnection>
+  </scm>
+
+	<distributionManagement>
+<!-- 	
+		<repository>
+			<id>NexusServer</id>
+			<url>http://127.0.0.1:8081/repository/ChubbRepo/</url>
+		</repository>	
+-->
+		<repository>
+			<id>local</id>
+			<name>Local repository</name>
+			<url>file:///Users/rbourner/.m2/repository</url>
+		</repository>	
+	</distributionManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+    	<dependency>
+      		<groupId>org.jbpm</groupId>
+      		<artifactId>jbpm-bpmn2</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.jbpm</groupId>
+      		<artifactId>jbpm-audit</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.jbpm</groupId>
+      		<artifactId>jbpm-flow</artifactId>
+    	</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-decisiontables</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-ci</artifactId>
+		</dependency>
+    	<dependency>
+      		<groupId>org.kie</groupId>
+      		<artifactId>kie-dmn-api</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.kie</groupId>
+      		<artifactId>kie-dmn-model</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.kie</groupId>
+      		<artifactId>kie-dmn-core</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.kie</groupId>
+      		<artifactId>kie-dmn-backend</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.kie</groupId>
+      		<artifactId>kie-dmn-feel</artifactId>
+    	</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+  		<dependency>
+  			<groupId>org.hamcrest</groupId>
+  			<artifactId>hamcrest-library</artifactId>
+  			<scope>test</scope>
+  		</dependency>
+	</dependencies>
+
+	<build>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-release-plugin</artifactId>
+    			<version>2.5.3</version>
+    		</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+    	</plugins>
+    </build>
+
+</project>
