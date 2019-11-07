@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>WMIssueReproducer</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 	<parent>
 		<groupId>com.redhat.brms</groupId>
@@ -9,13 +9,15 @@
 		<version>1.0.1</version>
 	</parent>
 	
-
 	<properties>
-		<kie.version>7.3.1.GA-redhat-00002</kie.version>
-		
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	
+	<!-- Sections needed for the plugin creating RELEASES from SNAPSHOTS -->
+	<scm>
+    	<developerConnection>scm:git:git@github.com:rbourner/wmissuereproducer.git</developerConnection>
+	</scm>
 	
 	<dependencies>
 		<dependency>
@@ -85,8 +87,4 @@
   		</dependency>
 	</dependencies>
 
-
-  <scm>
-    <tag>WMIssueReproducer-1.0.0</tag>
-  </scm>
 </project>
